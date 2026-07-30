@@ -6,14 +6,14 @@ import re
 import pandas as pd
 
 # Set page config for a wider, cleaner layout
-st.set_page_config(page_title="NER Deep Learning App", page_icon="🕵️‍♂️", layout="centered")
+st.set_page_config(page_title="NER Deep Learning App", layout="centered")
 
 # --- CACHING THE MODEL & DICTIONARY ---
 # This ensures the 83MB model only loads once and stays in memory!
 @st.cache_resource
 def load_assets():
     # Load the Keras model
-    model = load_model('ner_bilstm_model.keras')
+    model = load_model('NER_BiLSTM_model.keras')
     
     # Load the dictionary
     with open('words_to_index.pkl', 'rb') as f:
